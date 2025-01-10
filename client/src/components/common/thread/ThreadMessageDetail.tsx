@@ -1,10 +1,10 @@
 "use client";
 import { MockMessageType } from "@/constants";
-import { PiEyesFill } from "react-icons/pi";
+import { PiEyes } from "react-icons/pi";
 import { IoIosCheckbox } from "react-icons/io";
 import { PiHandsClapping } from "react-icons/pi";
 import { TbMessageDots } from "react-icons/tb";
-import { AiFillDelete } from "react-icons/ai";
+import { FiDelete } from "react-icons/fi";
 import React from "react";
 const ThreadMessageDetail = ({ message }: { message: MockMessageType }) => {
   const [active, setActive] = React.useState(false);
@@ -20,7 +20,7 @@ const ThreadMessageDetail = ({ message }: { message: MockMessageType }) => {
             <IoIosCheckbox />
           </span>
           <span className="text-lg w-[28px] h-[28px] hover:bg-[#eee] cursor-pointer rounded-full  flex items-center justify-center  text-[#000]">
-            <PiEyesFill />
+            <PiEyes />
           </span>
           <span className="text-lg w-[28px] h-[28px] hover:bg-[#eee] cursor-pointer rounded-full  flex items-center justify-center  text-[#000]">
             <PiHandsClapping />
@@ -41,7 +41,7 @@ const ThreadMessageDetail = ({ message }: { message: MockMessageType }) => {
                       text-[#E93FA8]"
             >
               {" "}
-              <AiFillDelete />
+              <FiDelete />
             </span>
             Delete
           </span>

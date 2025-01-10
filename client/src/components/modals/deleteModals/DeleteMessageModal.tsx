@@ -73,13 +73,13 @@ const DeleteMessageModal = () => {
                                     <span className="text-xs md:text-sm text-dark">{data?.createdAt}</span>
                                 </div>
                                 <div className="flex-1 flex flex-col gap-1">
-                                    <span className="max-w-[250px] md:max-w-[500px] text-sm md:text-sm leading-[1.2] text-dark">
+                                    <span className="max-w-[250px] md:max-w-[500px] text-sm md:text-sm leading-[1] text-dark">
                                         {data?.text}
                                     </span>
                                     {
                                         data?.image && <div className="h-[280px] relative w-[250px] md:w-[450px]">
                                             <img
-                                                fill
+                                                
                                                 className='rounded-lg  object-cover'
                                                 src={data?.image}
                                                 alt="message_image"

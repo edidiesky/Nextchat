@@ -80,7 +80,7 @@ button:disabled {
 
 body {
   color: var(--text-dark);
-  line-height: 1.1;
+  line-height: 1;
   font-family: "Regular", Helvetica, sans-serif;
 }
 .family2 {

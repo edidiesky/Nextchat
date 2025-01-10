@@ -3,12 +3,12 @@ import { MockMessageType } from "@/constants";
 import { onDeleteMessageModal } from "@/redux/slices/modalSlice";
 import { useDispatch } from "react-redux";
 import { FiEdit2 } from "react-icons/fi";
-import { PiEyesFill } from "react-icons/pi";
+import { PiEyes } from "react-icons/pi";
 import { IoIosCheckbox } from "react-icons/io";
 import { PiHandsClapping } from "react-icons/pi";
 import { TbMessageDots } from "react-icons/tb";
 import { FiThumbsUp } from "react-icons/fi";
-import { AiFillDelete } from "react-icons/ai";
+import { FiDelete } from "react-icons/fi";
 import React, { useState } from "react";
 import EditForm from "./EditForm";
 const MessageDetails = ({
@@ -34,7 +34,7 @@ const MessageDetails = ({
             <IoIosCheckbox />
           </span>
           <span className="text-lg w-[28px] h-[28px] hover:bg-[#eee] cursor-pointer rounded-full  flex items-center justify-center  text-[#000]">
-            <PiEyesFill />
+            <PiEyes />
           </span>
           <span className="text-lg w-[28px] h-[28px] hover:bg-[#eee] cursor-pointer rounded-full  flex items-center justify-center  text-[#000]">
             <PiHandsClapping />
@@ -77,7 +77,7 @@ const MessageDetails = ({
                       text-[#f73760]"
             >
               {" "}
-              <AiFillDelete />
+              <FiDelete />
             </span>
             Delete
           </span>
@@ -126,7 +126,7 @@ const MessageDetails = ({
                 <span className="flex items-center cursor-pointer gap-1 p-2 hover:bg-[#eee] bg-[#fafafa] text-sm rounded-lg">
                   <span className="text-lg rounded-full flex items-center justify-center text-[#000]">
                     {" "}
-                    <PiEyesFill />
+                    <PiEyes />
                   </span>
                   13
                 </span>

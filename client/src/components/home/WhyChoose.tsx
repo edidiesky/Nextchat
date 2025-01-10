@@ -12,7 +12,7 @@ const WhyChoose = () => {
           <span className="text-base lg:text-lg font-normal lg:text-center max-w-[500px]">
             <AnimateTextWord type="bigtext_Center">Choose Us</AnimateTextWord>
           </span>
-          <h2 className="text-4xl lg:text-7xl max-w-[600px] mx-auto lg:text-center leading-[1.2] family2 text-dark family2">
+          <h2 className="text-4xl lg:text-7xl max-w-[600px] mx-auto lg:text-center leading-[1] family2 text-dark family2">
             <AnimateTextWord type="bigtext_Center">
               Why Connect is right for you?
             </AnimateTextWord>

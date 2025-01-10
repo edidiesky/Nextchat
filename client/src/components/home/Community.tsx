@@ -6,7 +6,7 @@ const Community = () => {
         <div className='flex w-full py-20 items-center  gap-8 justify-center'>
             <div className="max-w-custom mx-auto w-[90%] grid lg:grid-cols-2 lg:items-center gap-12 lg:gap-20">
                 <div className="w-full flex flex-col gap-4 lg:items-center justify-between">
-                    <h2 className="text-4xl flex-1 lg:text-6xl text-start leading-[1.2] family2 text-dark family2">
+                    <h2 className="text-4xl flex-1 lg:text-6xl text-start leading-[1] family2 text-dark family2">
                         <span className="pb-4 block text-xl">
                             <AnimateTextWord type='bigtext'>
                                 Top Companies
@@ -36,7 +36,7 @@ const Community = () => {
 
                                 <div className="flex flex-col gap-4">
 
-                                    <h3 className="text-2xl lg:text-3xl leading-[1.2] family2 text-dark family2">
+                                    <h3 className="text-2xl lg:text-3xl leading-[1] family2 text-dark family2">
                                         <AnimateTextWord type='bigtext'>
                                             Jobs In Tech
                                         </AnimateTextWord>
@@ -60,7 +60,7 @@ const Community = () => {
 
                                 <div className="flex flex-col gap-4">
 
-                                    <h3 className="text-2xl lg:text-3xl leading-[1.2] family2 text-dark family2">
+                                    <h3 className="text-2xl lg:text-3xl leading-[1] family2 text-dark family2">
                                         <AnimateTextWord type='bigtext'>
                                             Designers
                                         </AnimateTextWord>
@@ -85,7 +85,7 @@ const Community = () => {
                             <div className="min-h-[100%] z-10 rounded-[20px] w-full bg-[#e8f2fc61] flex p-6 pt-8 flex-col justify-between gap-12">
 
                                 <div className="flex flex-col gap-4">
-                                    <h3 className="text-3xl pb-6 border-b lg:text-4xl leading-[1.2] family2 text-dark family2">
+                                    <h3 className="text-3xl pb-6 border-b lg:text-4xl leading-[1] family2 text-dark family2">
                                         <AnimateTextWord type='bigtext'>
                                             20k+
                                         </AnimateTextWord>
@@ -97,7 +97,7 @@ const Community = () => {
                                            
                                         </span>
                                     </h3>
-                                    <h3 className="text-2xl lg:text-3xl leading-[1.2] family2 text-dark family2">
+                                    <h3 className="text-2xl lg:text-3xl leading-[1] family2 text-dark family2">
                                         <AnimateTextWord type='bigtext'>
                                             Salaries in Tech
                                         </AnimateTextWord>
@@ -117,7 +117,7 @@ const Community = () => {
                             </div>
                         </div>
                         <div className="z-10 rounded-[20px] w-full bg-[#e8f2fc61] flex p-4 items-center justify-center gap-4">
-                            <h3 className="text-lg lg:text-xl leading-[1.2] family2 text-dark text-center w-full family2">
+                            <h3 className="text-lg lg:text-xl leading-[1] family2 text-dark text-center w-full family2">
                                 More
                             </h3>
                         </div>

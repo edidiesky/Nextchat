@@ -73,7 +73,7 @@ const AddGroupMembersModal = () => {
                                         <div key={index} className={`${index !== 0 ? "-ml-4 border-[#3e3aff] border-2 p-2" : "p-2"}  rounded-full w-[35px] h-[35px] relative`}>
                                             <img
                                                 src={user?.image}
-                                                fill
+                                                
                                                 className='rounded-full relative object-cover'
                                                 alt='Avatar for user'
                                             />
@@ -106,7 +106,7 @@ const AddGroupMembersModal = () => {
                                             <div className={`${active ? "border-[#3e3aff] border-2 p-2" : ""} rounded-full w-[45px] h-[45px] relative`}>
                                                 <img
                                                     src={user?.image}
-                                                    fill
+                                                    
                                                     className='rounded-full relative object-cover'
                                                     alt='Avatar for user'
                                                 />

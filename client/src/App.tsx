@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import Loader from "./components/loader/index";
 import React from "react";
 
 const Home = React.lazy(() => import("./screens/Home"));
@@ -29,7 +28,7 @@ export default function App() {
           <Route
             index
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<></>}>
                 <ProtectRoute>
                   <Channel />
                 </ProtectRoute>
