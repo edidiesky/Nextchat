@@ -144,13 +144,13 @@ const Reviews = () => {
                                     alt={'Photoimg Description'}
                                     src={'https://crisp.chat/_ipx/s_28x28/common/icons/star.svg'}
                                     className=' h-[30px] w-[30px] object-cover'
-                                /> <Image
+                                /> <img
                                     width={30}
                                     height={30}
                                     alt={'Photoimg Description'}
                                     src={'https://crisp.chat/_ipx/s_28x28/common/icons/star.svg'}
                                     className=' h-[30px] w-[30px] object-cover'
-                                /> <Image
+                                /> <img
                                     width={30}
                                     height={30}
                                     alt={'Photoimg Description'}

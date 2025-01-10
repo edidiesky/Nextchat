@@ -47,7 +47,7 @@ const MessageDetails = ({ message, setActiveThreadSidebar }: {
                 </div>
             )}
             {message?.sender?.image ? (
-                <Image
+                <img
                     width={46}
                     height={46}
                     className='rounded-full w-[46px] h-[46px] object-cover'
@@ -72,7 +72,7 @@ const MessageDetails = ({ message, setActiveThreadSidebar }: {
                             </span>
                             {
                                 message?.image && <div className="h-[280px] relative w-full md:w-[450px]">
-                                    <Image
+                                    <img
                                         fill
                                         className='rounded-lg  object-cover'
                                         src={message?.image}

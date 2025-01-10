@@ -18,7 +18,7 @@ const DashboardHeader = ({ }) => {
             </div>
             <div className="flex justify-end relative items-center gap-4">
                 <div onClick={() => setActive(!active)} className="flex relative justify-end group items-center gap-4 cursor-pointer">
-                    <Image
+                    <img
                         src={'/images/user_3.jpg'}
                         width={50}
                         height={50}
@@ -34,7 +34,7 @@ const DashboardHeader = ({ }) => {
                     {`absolute ${active ? "opacity-100 scale-100 visible" : "scale-[0] opacity-0 "} py-2 border right-[10%] top-[110%] shadow-lg w-[250px] bg-white rounded-lg`}>
                     <div className="w-full flex flex-col gap-4">
                         <div className="flex w-full relative pb-3 border-b px-4 items-center gap-4 cursor-pointer">
-                            <Image
+                            <img
                                 src={'/images/user_3.jpg'}
                                 width={45}
                                 height={45}

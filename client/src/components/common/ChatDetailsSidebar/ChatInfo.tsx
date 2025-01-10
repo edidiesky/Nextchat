@@ -110,7 +110,7 @@ const ChatInfo = ({ isGroup }: { isGroup?: boolean }) => {
                 </div>
                 <div className="w-full flex py-4 -mt-16 px-4 border-b flex-col gap-2">
                     <div className="rounded-full w-[100px] h-[100px] border-[#fff] relative border-4 p-6 bg-white">
-                        <Image
+                        <img
                             src={'/images/user_1.jpg'}
                             fill
                             className='rounded-full w-full h-full object-cover'
@@ -150,7 +150,7 @@ const ChatInfo = ({ isGroup }: { isGroup?: boolean }) => {
                         {MockUserList.map((data, index) => {
                             return (
                                 <div key={index} className="w-[95%] mx-auto flex cursor-pointer rounded-full items-center py-2 hover:bg-[#8c5a9b16] px-3 gap-3 text-sm lg:text-base">
-                                    <Image
+                                    <img
                                         width={40}
                                         height={40}
                                         className='w-[40px] h-[40px] rounded-full object-cover'

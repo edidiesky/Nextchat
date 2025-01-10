@@ -13,7 +13,7 @@ const MessageHeader = ({ setActive, active }: {
         }} className='min-h-[80px] items-center bg-[#ffffffb0] sticky top-0 flex border-b border-[#F3F3EE] w-full px-4'>
             <div className="flex w-full items-center justify-between gap-4">
                 {/* <div className="flex p-1 px-3 hover:bg-[#eee] cursor-pointer rounded-lg items-center gap-4">
-                    <Image
+                    <img
                         src={'/images/user_1.jpg'}
                         width={40}
                         height={40}

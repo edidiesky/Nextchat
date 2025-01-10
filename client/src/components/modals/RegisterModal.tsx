@@ -131,7 +131,7 @@ const RegisterModal = () => {
                         </form>
                     </div>
                     <div className="w-full h-full relative">
-                        <Image
+                        <img
                             src={'https://app.crisp.chat/images/components/initiate/InitiateLayout/illustration_background.svg'}
                             className='w-full object-cover z-4'
                             fill

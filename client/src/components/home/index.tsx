@@ -2,11 +2,11 @@ import Hero from "./Hero";
 import About from "./About";
 import TopCompanies from "./TopCompanies";
 import Reviews from "./Reviews";
-import Newsletter from "../components/common/Newsletter";
+import Newsletter from "../common/Newsletter";
 // Newsletter
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
-import SmoothScroll from "@/constants/SmoothScroll";
+import Header from "../common/Header";
+import Footer from "../common/Footer";
+// import SmoothScroll from "../constants/SmoothScroll";
 const HomeIndex = () => {
   return (
     <>

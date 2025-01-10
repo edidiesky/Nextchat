@@ -54,7 +54,7 @@ const DeleteMessageModal = () => {
                         
                         <div className="w-full border rounded-lg p-4 flex items-center gap-4">
                             {data?.sender?.image ? (
-                                <Image
+                                <img
                                     width={40}
                                     height={40}
                                     className='rounded-full w-[40px] h-[40px] object-cover'
@@ -78,7 +78,7 @@ const DeleteMessageModal = () => {
                                     </span>
                                     {
                                         data?.image && <div className="h-[280px] relative w-[250px] md:w-[450px]">
-                                            <Image
+                                            <img
                                                 fill
                                                 className='rounded-lg  object-cover'
                                                 src={data?.image}

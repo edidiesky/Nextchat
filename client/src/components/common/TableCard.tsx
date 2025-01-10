@@ -31,7 +31,7 @@ const TableCard = ({ tabledata, type, tableheadList }: {
                             return <tr className="px-4 hover:bg-[#eee] border-b cursor-pointer text-start py-6" key={data?.id}>
 
                                 <td className=" font-normal py-6 text-center">
-                                    {/* <Image
+                                    {/* <img
                                         src={data?.companyImage}
                                         width={50}
                                         height={50}
@@ -41,7 +41,7 @@ const TableCard = ({ tabledata, type, tableheadList }: {
                                 </td>
                                 <td className=" space-x-3  family2 py-6 text-center">
                                     <div className="flex justify-center items-center gap-3">
-                                        <Image
+                                        <img
                                             src={data?.applicantImage}
                                             width={45}
                                             height={45}
@@ -113,7 +113,7 @@ const TableCard = ({ tabledata, type, tableheadList }: {
                         return <tr className="px-4 border-b hover:bg-[#eee] cursor-pointer text-start py-6" key={data?.id}>
 
                             <td className=" font-normal py-6 flex items-center justify-center text-center">
-                                <Image
+                                <img
                                     src={data?.companyImage}
                                     width={50}
                                     height={50}

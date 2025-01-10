@@ -28,7 +28,7 @@ const ThreadMessageDetail = ({ message }: { message: MockMessageType }) => {
                 </span>
             </div>}
             {message?.sender?.image ? (
-                <Image
+                <img
                     width={46}
                     height={46}
                     className='rounded-full w-[46px] h-[46px] object-cover'
@@ -52,7 +52,7 @@ const ThreadMessageDetail = ({ message }: { message: MockMessageType }) => {
                     </span>
                     {
                         message?.image && <div className="h-[200px] relative w-full">
-                            <Image
+                            <img
                                 fill
                                 className='rounded-lg  object-cover'
                                 src={message?.image}
