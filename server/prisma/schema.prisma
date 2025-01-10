@@ -1,0 +1,119 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum RoleStatus {
+  admin
+  user
+  moderator
+}
+
+enum InvitationStatus {
+  pending
+  accepted
+  rejected
+}
+
+model User {
+  id                          String                @id @default(auto()) @map("_id") @db.ObjectId
+  name                        String
+  username                    String
+  email                       String?               @unique
+  phone                       String?
+  emailVerified               DateTime?
+ img                       String?
+  password                    String?
+  verifiedToken               String?
+  resetPasswordToken          String?
+  verifiedTokenExpiresAt      DateTime?
+  resetPasswordTokenExpiresAt DateTime?
+  createdAt                   DateTime              @default(now())
+  updatedAt                   DateTime              @updatedAt
+  WorkSpaceUser               WorkSpaceUser[]
+  ChannelUser                 ChannelUser[]
+  Message                     Message[]
+  WorkSpaceUserInvite         WorkSpaceUserInvite[]
+}
+
+model WorkSpace {
+  id                  String                @id @default(auto()) @map("_id") @db.ObjectId
+  name                String
+  description         String?
+ img               String?
+  slug                String                @unique
+  createdAt           DateTime              @default(now())
+  lastMessageAt       DateTime              @default(now())
+  channel             Channel[]
+  users               WorkSpaceUser[]
+  WorkSpaceUserInvite WorkSpaceUserInvite[]
+}
+
+model WorkSpaceUser {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   DateTime   @default(now())
+  workspaceid String     @db.ObjectId
+  role        RoleStatus @default(user)
+  workspace   WorkSpace  @relation(fields: [workspaceid], references: [id])
+  userid      String     @db.ObjectId
+  user        User       @relation(fields: [userid], references: [id])
+}
+
+model WorkSpaceUserInvite {
+  id                       String           @id @default(auto()) @map("_id") @db.ObjectId
+  invitationtoken          String           @unique
+  userEmail                String?
+  createdAt                DateTime         @default(now())
+  invitationtokenexpiresAt DateTime
+  role                     RoleStatus       @default(user)
+  status                   InvitationStatus @default(pending)
+  workspaceid              String           @db.ObjectId
+  workspace                WorkSpace        @relation(fields: [workspaceid], references: [id])
+  invitedByUserid          String           @db.ObjectId
+  invitedBy                User             @relation(fields: [invitedByUserid], references: [id])
+}
+
+model Channel {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+ img       String?
+  slug        String        @unique
+  createdAt   DateTime      @default(now())
+  workspaceid String        @db.ObjectId
+  workspace   WorkSpace     @relation(fields: [workspaceid], references: [id])
+  channeluser ChannelUser[]
+  message     Message[]
+}
+
+model ChannelUser {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  role      RoleStatus @default(user)
+  createdAt DateTime   @default(now())
+  channelid String     @db.ObjectId
+  channel   Channel    @relation(fields: [channelid], references: [id])
+  userid    String     @db.ObjectId
+  user      User       @relation(fields: [userid], references: [id])
+}
+
+model Message {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  body      String?
+ img     String?
+  channelid String   @db.ObjectId
+  channel   Channel  @relation(fields: [channelid], references: [id])
+  userid    String   @db.ObjectId
+  user      User     @relation(fields: [userid], references: [id])
+  createdAt DateTime @default(now())
+
+  parentid String?   @db.ObjectId
+  parent   Message?  @relation("Thread", fields: [parentid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies  Message[] @relation("Thread")
+}

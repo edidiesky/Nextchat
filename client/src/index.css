@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+button:disabled {
+  cursor: not-allowed;
+}
+@font-face {
+  font-family: "Bold";
+  src: url("./assets/fonts/ClashGrotesk-Medium.otf") format("opentype");
+  font-weight: medium;
+}
+@font-face {
+  font-family: "Regular";
+  src: url("./assets/fonts/ClashGrotesk-Regular.otf") format("opentype");
+  font-weight: normal;
+}
+
+body {
+  color: var(--text-dark);
+  line-height: 1.1;
+  font-family: "Regular", Helvetica, sans-serif;
+}
+.family2 {
+  font-family: "Bold", Helvetica, sans-serif;
+}
+.family1 {
+  font-family: "Regular", Helvetica, sans-serif;
+}
+/* 
+text color style
+*/
+.text-dark {
+  color: var(--text-dark);
+}
+.text-grey {
+  color: var(--text-grey);
+}
+/* 
+text color style end
+*/
+/* button styles */
+.btn {
+  min-height: 50px;
+  /* min-width: 130px; */
+  border-radius: 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.btn.btn_2 {
+  background-color: #fff;
+  color: var(--button_color);
+}
+.btn:hover {
+  color: #fff;
+  box-shadow: 0 0 0 4px var(--shadow_color);
+}
+.btn.btn_2:hover {
+  color: var(--button_color);
+  transition: all 0.3s;
+  border: 1px solid var(--background_dark);
+  box-shadow: 0 0 0 4px var(--shadow_color);
+}
+/* button styles stop */
+
+/* input styles */
+.input {
+  min-height: 45px;
+  border: 1.5px solid rgba(0, 0, 0, 0.02);
+  padding: 0 1rem;
+  background-color: #fff !important;
+}
+input::placeholder {
+  color: #777;
+}
+form input {
+  min-height: 45px;
+  border: 1.5px solid rgba(0, 0, 0, 0.02);
+  padding: 0 1rem;
+  background-color: #fff !important;
+}
+
+form input:hover {
+  box-shadow: 0 0 0 6px var(--shadow_color);
+  outline: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* input styles stop */
+.shadows:hover {
+  border: 1px solid var(--background_dark);
+  box-shadow: 0 0 0 6px var(--shadow_color);
+  transition: all 0.3s;
+}
+
+.sidebar_shadow {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 5px;
+  background: #f3f3f3;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.hide {
+  overflow: hidden !important;
+}
+
+.hide {
+  overflow: hidden;
+}
+
+.line {
+  overflow: hidden;
+  text-align: center !important;
+}
+
+@media (max-width: 780px) {
+  .line {
+    overflow: hidden;
+    text-align: start !important;
+    width: fit-content !important;
+    /* display: inline-block; */
+  }
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
