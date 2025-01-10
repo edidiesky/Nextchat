@@ -6,10 +6,10 @@ import Newsletter from "../common/Newsletter";
 // Newsletter
 import Header from "../common/Header";
 import Footer from "../common/Footer";
-// import SmoothScroll from "../constants/SmoothScroll";
+import SmoothScroll from "@/constants/SmoothScroll";
 const HomeIndex = () => {
   return (
-    <>
+    <SmoothScroll>
       <Header />
       <Hero />
       <About />
@@ -17,7 +17,7 @@ const HomeIndex = () => {
       <Reviews />
       <Newsletter />
       <Footer />
-    </>
+    </SmoothScroll>
   );
 };
 

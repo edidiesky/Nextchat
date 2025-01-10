@@ -1,13 +1,15 @@
 {
-  "files": [],
   "compilerOptions": {
+    "jsx": "react-jsx", // Use "react" if you're using React 17 or below
+    "allowJs": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
-  },
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  }
 }
