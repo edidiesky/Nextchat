@@ -35,7 +35,7 @@ const DeleteMessageModal = () => {
                 initial="initial"
                 animate={deletemessagemodal ? "enter" : "exit"}
                 exit={"exit"}
-                className="w-full min-h-full md:w-[500px] md:max-w-[550px] pt-6 md:min-h-[280px] justify-between relative items-start md:rounded-[10px] flex flex-col gap-6 bg-white">
+                className="w-full min-h-full md:w-[550px] md:max-w-[550px] pt-6 md:min-h-[280px] justify-between relative items-start md:rounded-[10px] flex flex-col gap-6 bg-white">
 
                 <div className="w-full flex px-8 items-center justify-between gap-1">
                     <h3 className="text-2xl md:text-2xl ">

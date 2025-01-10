@@ -131,7 +131,7 @@ text color style end
 
 /* input styles */
 .input {
-  min-height: 45px;
+  min-height: 50px;
   border: 1.5px solid rgba(0, 0, 0, 0.1);
   padding: 0 1rem;
   background-color: #fff !important;
@@ -140,7 +140,7 @@ input::placeholder {
   color: #777;
 }
 form input {
-  min-height: 45px;
+  min-height: 50px;
   border: 1.5px solid rgba(0, 0, 0, 0.1);
   padding: 0 1rem;
   background-color: #fff !important;
