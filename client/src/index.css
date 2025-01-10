@@ -111,7 +111,6 @@ text color style end
   align-items: center;
   justify-content: center;
   padding: 0 24px;
-  border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .btn.btn_2 {
@@ -133,7 +132,7 @@ text color style end
 /* input styles */
 .input {
   min-height: 45px;
-  border: 1.5px solid rgba(0, 0, 0, 0.02);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
   padding: 0 1rem;
   background-color: #fff !important;
 }
@@ -142,25 +141,23 @@ input::placeholder {
 }
 form input {
   min-height: 45px;
-  border: 1.5px solid rgba(0, 0, 0, 0.02);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
   padding: 0 1rem;
   background-color: #fff !important;
 }
 
 form input:hover {
   box-shadow: 0 0 0 6px var(--shadow_color);
-  outline: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 /* input styles stop */
 .shadows:hover {
-  border: 1px solid var(--background_dark);
   box-shadow: 0 0 0 6px var(--shadow_color);
   transition: all 0.3s;
 }
 
 .sidebar_shadow {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 @layer utilities {

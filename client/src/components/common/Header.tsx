@@ -38,7 +38,7 @@ const Header = () => {
               <div className="flex items-center justify-end gap-2 md:gap-4">
                 <Link
                   to={"/dashboard/user"}
-                  className="text-sm lg:text-sm px-4 lg:px-6 py-3 border rounded-full text-white bg-[#3e3aff] shadows"
+                  className="text-sm lg:text-sm px-4 lg:px-6 py-3 rounded-full text-white bg-[#3e3aff] shadows"
                 >
                   Go to Dashboard
                 </Link>

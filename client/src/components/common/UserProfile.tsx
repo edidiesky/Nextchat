@@ -72,32 +72,32 @@ const UserProfile = () => {
                                 <div className="flex flex-col gap-3">
                                     <div className="w-full family1 flex flex-col pb-3 border-b">
                                         <Link
-                                            href={`/dashboard/recruiter`}
+                                            to={`/dashboard/recruiter`}
                                             className="text-sm block font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             My Dashboard
                                         </Link>
                                         <Link
-                                            href={`/dashboard/recruiter/jobs`}
+                                            to={`/dashboard/recruiter/jobs`}
                                             className="text-sm block font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             My Jobs
                                         </Link>
                                         <Link
-                                            href={"/dashboard/recruiter/candidates"}
+                                            to={"/dashboard/recruiter/candidates"}
                                             className="text-sm block font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             My Candidates
                                         </Link>
                                         <Link
-                                            href={"/dashboard/recruiter/message"}
+                                            to={"/dashboard/recruiter/message"}
                                             className="text-sm block font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             My Messages
                                         </Link>
                                         {currentUser?.role === "JOB_AdDMIN" && (
                                             <Link
-                                                href={"/dashboard/recruiter/customers"}
+                                                to={"/dashboard/recruiter/customers"}
                                                 className="text-sm block font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                             >
                                                 My Customers
@@ -107,7 +107,7 @@ const UserProfile = () => {
                                     <div className="w-full family1 flex flex-col pb-3 border-b">
 
                                         <Link
-                                            href={`/dashboard/recruiter/profile/`}
+                                            to={`/dashboard/recruiter/profile/`}
                                             className="text-sm block  font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             Account Settings
@@ -118,19 +118,19 @@ const UserProfile = () => {
                                 <div className="flex flex-col gap-3">
                                     <div className="w-full family1 flex flex-col pb-3 border-b">
                                         <Link
-                                            href={`/dashboard/user`}
+                                            to={`/dashboard/user`}
                                             className="text-sm block font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             My Dashboard
                                         </Link>
                                         <Link
-                                            href={`/dashboard/user/applied-jobs`}
+                                            to={`/dashboard/user/applied-jobs`}
                                             className="text-sm block font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             My Applications
                                         </Link>
                                         <Link
-                                            href={"/dashboard/user/message"}
+                                            to={"/dashboard/user/message"}
                                             className="text-sm block font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             My Messages
@@ -139,7 +139,7 @@ const UserProfile = () => {
                                     <div className="w-full family1 flex flex-col pb-3 border-b">
 
                                         <Link
-                                            href={`/dashboard/user/profile`}
+                                            to={`/dashboard/user/profile`}
                                             className="text-sm block  font-normal px-4 py-2 hover:bg-[#fafafa] text-[#000]"
                                         >
                                             Account Settings
