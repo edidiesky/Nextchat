@@ -49,8 +49,8 @@ const MessageHeader = ({ setActive, active }: {
                                 return (
                                     <div key={index} className={`${index !== 0 ? "-ml-4 border-[#f8f8f8] border-2 p-2" : "p-2"} rounded-full w-[40px] h-[40px] relative`}>
                                         <img
-                                            src={user?.image}
-                                            className='rounded-full z-4 relative object-cover'
+                                            src={user?.img}
+                                            className='rounded-full w-full h-full z-4 absolute top-0 left-0 object-cover'
                                             alt='Avatar for user'
                                         />
 

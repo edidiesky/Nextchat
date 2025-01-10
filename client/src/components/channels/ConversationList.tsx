@@ -1,5 +1,5 @@
 "use client"
-import Link from 'next/link';
+// import Link from 'next/link';
 import { HiUserGroup } from "react-icons/hi2";
 import {
     Collapsible,
@@ -100,7 +100,7 @@ const ConversationList = ({ }) => {
                                             width={30}
                                             height={30}
                                             className='w-[30px] h-[30px] rounded-full object-cover'
-                                            src={data?.image}
+                                            src={data?.img}
                                             alt="message_image"
                                         />
                                         {data.name}</div>

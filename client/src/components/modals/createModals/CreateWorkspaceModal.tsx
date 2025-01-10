@@ -43,15 +43,15 @@ const CreateWorkspaceModal = () => {
                 initial="initial"
                 animate={groupnamemodal ? "enter" : "exit"}
                 exit={"exit"}
-                className="w-full min-h-full md:w-[450px] md:max-w-[450px]  md:min-h-[240px] justify-center pt-12 relative items-start md:rounded-[10px] flex flex-col gap-8 bg-white">
+                className="w-full min-h-full md:w-[550px] md:max-w-[550px]  md:min-h-[240px] justify-center pt-12 relative items-start md:rounded-[10px] flex flex-col gap-8 bg-white">
                 <div onClick={() => dispatch(offGroupNameModal(""))} className="absolute top-4 right-4 text-[#000] cursor-pointer w-12 h-12 flex items-center hover:bg-[#fafafa] rounded-full justify-center text-xl">
                     <RxCross2 />
                 </div>
                 <div className="w-full px-6 flex flex-col">
-                    <h3 className="text-xl md:text-2xl family2">
+                    <h3 className="text-2xl md:text-3xl family2">
                      Create your Workspace
                     </h3>
-                    <span className="block text-sm text-[#777] md:text-sm max-w-[350px]">
+                    <span className="block text-sm text-[#777] md:text-base max-w-[350px]">
                         Give your workspace a personality by adding an icon and a title, make it concise and brief.
 
                    </span>
@@ -79,7 +79,7 @@ const CreateWorkspaceModal = () => {
                             name={"name"}
                             onChange={(e) => onChange(e)}
                             placeholder={"Enter your Workspace Name (be brief)"}
-                            className="text-base font-normal input bg-white rounded-full flex-1 "
+                            className="text-sm font-normal input bg-white rounded-full flex-1 "
 
                         />
                     </div>
