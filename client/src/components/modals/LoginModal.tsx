@@ -62,9 +62,12 @@ const LoginModal = () => {
   useEffect(() => {
     if (workspaces && workspaces?.length > 0) {
       // Navigate to the first workspace's dashboard
-      const firstWorkspace = workspaces[0]?.workspace;
+      const firstWorkspace = workspaces[0];
       const timer = setTimeout(
-        () => navigate(`/workspace/${firstWorkspace.id}`),
+        () =>
+          navigate(
+            `/workspace/${firstWorkspace?.workspace?.id}/${firstWorkspace?.id}`
+          ),
         300
       );
       dispatch(offLoginModal(""));

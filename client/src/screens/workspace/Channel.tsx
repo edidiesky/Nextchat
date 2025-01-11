@@ -1,14 +1,21 @@
-
 import Header from "../../components/channels/Header";
 import ConversationList from "../../components/channels/ConversationList";
-const WorkspaceLayout = () => {
-    return (
-        <div className="w-full h-full">
-            <Header title="Dev Expert" />
-            <ConversationList />
-        </div>
-    )
-}
+import { useParams } from "react-router-dom";
+import { useGetSingleWorkSpaceQuery } from "@/redux/services/workspaceApi";
 
+const WorkspaceLayout = () => {
+  const { workspaceId: id, workspaceUserId } = useParams();
+
+  const { data } = useGetSingleWorkSpaceQuery({
+    id,
+    workspaceUserId,
+  });
+  return (
+    <div className="w-full h-full">
+      <Header title={data?.workspace?.name} />
+      <ConversationList />
+    </div>
+  );
+};
 
 export default WorkspaceLayout;

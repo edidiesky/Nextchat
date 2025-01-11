@@ -12,5 +12,5 @@ export const generateToken = (res, userid) => {
     path: "/",
   });
 
-  console.log("Token generated and cookie set:", token);
+  // console.log("Token generated and cookie set:", token);
 };

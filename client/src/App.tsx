@@ -24,7 +24,7 @@ export default function App() {
           />
         </Route>
         {/* workspace layout */}
-        <Route path={"/workspace/:id"} element={<WorkspaceLayout />}>
+        <Route path={"/workspace/:workspaceId/:workspaceUserId"} element={<WorkspaceLayout />}>
           <Route
             index
             element={

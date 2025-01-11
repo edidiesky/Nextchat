@@ -16,10 +16,10 @@ const Header = ({ title }: { title: string }) => {
 
     return (
         <div className='h-[80px] sticky top-0 items-center border-b border-[#bebebe3c] justify-between flex w-full px-4'>
-            <div className="flex-1 flex items-center gap-2">
+            <div className="w-full flex items-center gap-2">
                 <Popover>
-                    <PopoverTrigger>
-                        <h4 className="text-lg w-full flex p-2 justify-between cursor-pointer text-[#ddd] rounded-lg hover:bg-[#3F4248] items-center gap-1 md:text-lg">
+                    <PopoverTrigger className='w-full'>
+                        <h4 className="text-lg w-full flex justify-between cursor-pointer text-[#ddd] items-center gap-1 md:text-lg">
                             <span className="family2">
                                 {title}
                             </span>

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 const authMiddleware = (req, res, next) => {
   let token = req.cookies.jwt;
-   console.log("Setting cookie with token:", token);
+  //  console.log("Setting cookie with token:", token);
   if (!token) {
     res.status(401);
     throw new Error("User not authorized, No token");
@@ -14,7 +14,7 @@ const authMiddleware = (req, res, next) => {
       if (!Verifiedtoken) {
         res.status(403).json({ messsage: "Please provide a valid token" });
       }
-      console.log(Verifiedtoken.userId);
+      // console.log(Verifiedtoken.userId);
       const { userId } = Verifiedtoken;
 
       req.user = { userId };

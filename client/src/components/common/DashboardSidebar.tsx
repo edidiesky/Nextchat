@@ -7,7 +7,9 @@ import { FiPlus } from "react-icons/fi";
 // import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 const DashboardSidebar = ({
   sidebarlinks,
+  workspaceTitle,
 }: {
+  workspaceTitle: string;
   sidebarlinks?: {
     id: number;
     tab: { title: string; path: string; icon: React.JSX.Element };
@@ -15,13 +17,15 @@ const DashboardSidebar = ({
   }[];
 }) => {
   const dispatch = useDispatch();
+  // console.log(workspaceTitle?.split("-")[0][0]);
   return (
     <div className=" bg-[#1E1F22] lg:block hidden h-[100%] w-[100px] px-2 overflow-auto sticky py-3 top-0">
       <div className="w-full h-full flex justify-between flex-col gap-3">
         <div className="flex w-full flex-col gap-8">
           <div className="w-full flex items-center justify-center">
             <div className="w-[55px] h-[55px] rounded-xl flex bg-[#5865F2] items-center justify-center text-lg text-[#fff]">
-              VE
+              {workspaceTitle?.split("-")[0][0]}
+              {workspaceTitle?.split("-")[1][0]}
             </div>
           </div>
           <div className="flex-1 flex items-start flex-col text-xs gap-4">

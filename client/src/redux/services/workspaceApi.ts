@@ -22,7 +22,7 @@ export const workspaceApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         method: "GET",
         credentials: "include",
-        url: `${WORKSPACE_URL}/${data?.id}/${data?.workspaceuserid}`,
+        url: `${WORKSPACE_URL}/${data?.id}/${data?.workspaceUserId}`,
       }),
     }),
     updateWorkSpace: builder.mutation({
