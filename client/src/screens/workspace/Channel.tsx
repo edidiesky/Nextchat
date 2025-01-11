@@ -13,7 +13,7 @@ const WorkspaceLayout = () => {
   return (
     <div className="w-full h-full">
       <Header title={data?.workspace?.name} />
-      <ConversationList />
+      <ConversationList data={data} />
     </div>
   );
 };
