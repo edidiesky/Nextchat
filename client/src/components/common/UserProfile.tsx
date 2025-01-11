@@ -13,10 +13,11 @@ const UserProfile = () => {
   const dispatch = useDispatch();
   const handleLogOut = async () => {
     try {
-      await logout("");
       dispatch(LogOut(""));
+      await logout("");
       toast.success("You have been logged out successfully!");
     } catch (err: any) {
+      console.log(err)
       toast.error(err?.data?.message || err.error);
     }
   };

@@ -10,10 +10,10 @@ const Header = () => {
   const { currentUser } = useSelector((store: { auth?: any }) => store.auth);
   // console.log(currentUser);
   return (
-    <div className="w-full bg-[#08090a] lg:p-3">
-      <div className="w-full p-4 border-[#e7e7e736] lg:border min-h-[55px] rounded-xl max-w-custom mx-auto flex items-center justify-between">
+    <div className="w-full bg-[#08090a]">
+      <div className="w-full p-4 px-8 border-[#e7e7e736] lg:border-b min-h-[55px] flex items-center justify-between">
         <div className="flex items-center gap-8 lg:gap-12">
-          <Link to={"/"} className="text-lg lg:text-xl text-white family2">
+          <Link to={"/"} className="text-lg lg:text-2xl text-white family2">
             NexChat
           </Link>
         </div>

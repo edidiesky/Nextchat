@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div className="flex w-full py-24 items-center bg-[#fff] gap-8 justify-center">
       <div className="max-w-custom mx-auto w-[90%] flex flex-col gap-12">
-        <h2 className="text-3xl lg:text-5xl max-w-[700px] leading-[1.3] capitalize text-dark">
+        <h2 className="text-3xl lg:text-5xl max-w-[750px] family2 leading-[1.3] capitalize text-dark">
           <AnimateTextWord>
             Meet the workspace that delights your teams & customers
           </AnimateTextWord>

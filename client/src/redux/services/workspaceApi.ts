@@ -1,11 +1,10 @@
-
 import { WORKSPACE_URL } from "@/constants";
 import { apiSlice } from "./apiSlice";
 
 export const workspaceApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getAllUserWorkSpace: builder.query({
-      query: (_data) => ({
+      query: (data) => ({
         method: "GET",
         credentials: "include",
         url: `${WORKSPACE_URL}`,
@@ -32,7 +31,6 @@ export const workspaceApiSlice = apiSlice.injectEndpoints({
         body: data,
         credentials: "include",
         url: `${WORKSPACE_URL}/${data?.id}/${data?.workspaceuserid}`,
-
       }),
     }),
     deleteWorkSpace: builder.mutation({
@@ -40,7 +38,6 @@ export const workspaceApiSlice = apiSlice.injectEndpoints({
         method: "DELETE",
         credentials: "include",
         url: `${WORKSPACE_URL}/${data?.id}/${data?.workspaceuserid}`,
-
       }),
     }),
   }),
@@ -51,5 +48,5 @@ export const {
   useDeleteWorkSpaceMutation,
   useUpdateWorkSpaceMutation,
   useGetSingleWorkSpaceQuery,
-  useCreateWorkSpaceMutation
+  useCreateWorkSpaceMutation,
 } = workspaceApiSlice;

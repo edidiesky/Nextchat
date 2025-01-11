@@ -14,8 +14,8 @@ const Reviews = () => {
                         600,000 companies have already made the move
                     </AnimateTextWord>
                 </h2> */}
-                 <h2 className="text-3xl lg:text-5xl w-full max-w-[700px] leading-[1.6] capitalize text-dark ">
-                    <span className="">
+                 <h2 className="text-3xl lg:text-5xl w-full max-w-[750px] leading-[1.6] capitalize text-dark ">
+                    <span className="family2">
                         <AnimateTextWord>
                             600,000 companies have already made the move
                         </AnimateTextWord>

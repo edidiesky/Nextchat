@@ -74,10 +74,13 @@ const LoginUser = asyncHandler(async (req, res) => {
 
   res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  const { hashedPassword: _, ...userInfo } = userExist;
-  res.status(200).json({ user: userInfo });
+  const { hashedPassword: _, ...user } = userExist;
+  res.status(200).json(user);
 });
 
+// @description  Logout a  User
+// @route  POST /auth/logout
+// @access  Public
 const LogoutUser = asyncHandler(async (req, res) => {
   // console.log(token);
   res.cookie("jwt", "", {
@@ -87,6 +90,7 @@ const LogoutUser = asyncHandler(async (req, res) => {
     expires: new Date(0),
     path: "/",
   });
+  res.status(200).json({ message: "Logout succesfully!" });
 });
 
 export { registerUser, LoginUser, LogoutUser };

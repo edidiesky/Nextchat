@@ -32,8 +32,8 @@ const TopCompanies = () => {
 
                     </div>
                 </div>
-                <h2 className="text-3xl lg:text-5xl w-full max-w-[700px] leading-[1.6] capitalize text-dark ">
-                    <span className="">
+                <h2 className="text-3xl lg:text-5xl lg:pt-6 w-full max-w-[750px] leading-[1.6] capitalize text-dark ">
+                    <span className="family2">
                         <AnimateTextWord>
                             Built for customer support, marketing, and sales. All together.
                         </AnimateTextWord>

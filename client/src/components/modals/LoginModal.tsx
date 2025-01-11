@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 import { setUserCredentials } from "@/redux/slices/authSlice";
 import Loader from "../common/loader";
 import { useNavigate } from "react-router-dom";
+import { useGetAllUserWorkSpaceQuery } from "@/redux/services/workspaceApi";
 const LoginModal = () => {
   const { loginmodal } = useSelector(
     (store: { modal: { loginmodal: boolean } }) => store.modal
@@ -23,8 +24,12 @@ const LoginModal = () => {
     password: "12345",
     email: "RobertWatson@gmail.com",
   });
-  const [login, { isLoading, isSuccess }] = useLoginMutation();
-
+  const [login, { isLoading, data: currentUser, isSuccess: loginIsSuccess }] =
+    useLoginMutation();
+  const [shouldFetchWorkspace, setShouldFetchWorkspace] = useState(false);
+  const { data: workspaces } = useGetAllUserWorkSpaceQuery(undefined, {
+    skip: !shouldFetchWorkspace,
+  });
   const noEntry =
     formValue.email === "" || formValue.password === "" || isLoading;
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,8 +40,9 @@ const LoginModal = () => {
     try {
       const data = await login(formValue).unwrap();
       // console.log(data)
-      dispatch(setUserCredentials({ user: data?.user }));
-      toast.success(data?.message);
+      dispatch(setUserCredentials({ user: data }));
+      toast.success("Login Process succesfully!!");
+      setShouldFetchWorkspace(true);
     } catch (err: any) {
       toast.error(err?.data?.message || err.error);
     }
@@ -46,12 +52,25 @@ const LoginModal = () => {
     dispatch(offLoginModal(""));
     dispatch(onRegisterModal(""));
   };
+  // console.log("workspaces", workspaces);
+
   useEffect(() => {
-    if (isSuccess) {
-      navigate("/workspace/channel");
-      dispatch(offLoginModal(""));
+    if (loginIsSuccess && currentUser) {
+      setShouldFetchWorkspace(true);
     }
-  }, [isSuccess, navigate]);
+  }, [loginIsSuccess, currentUser, setShouldFetchWorkspace]);
+  useEffect(() => {
+    if (workspaces && workspaces?.length > 0) {
+      // Navigate to the first workspace's dashboard
+      const firstWorkspace = workspaces[0]?.workspace;
+      const timer = setTimeout(
+        () => navigate(`/workspace/${firstWorkspace.id}`),
+        300
+      );
+      dispatch(offLoginModal(""));
+      return () => clearTimeout(timer);
+    }
+  }, [workspaces, navigate]);
   return (
     <div className="h-[100vh]  bg-[#16161639] inset-0 backdrop-blur-sm w-full fixed top-0 left-0 z-[5000] flex items-center justify-center">
       <motion.div
