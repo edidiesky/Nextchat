@@ -9,7 +9,7 @@ import {
 import { FaHome } from "react-icons/fa";
 import { GoChevronDown } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
-import { MockUserList, channelListsData } from "@/constants";
+import { MockUserList } from "@/constants";
 // import { IoMdSettings } from "react-icons/io";
 import { BiLink, BiPlus } from "react-icons/bi";
 import React from "react";
