@@ -26,7 +26,7 @@ export default function App() {
         {/* workspace layout */}
         <Route path={"/workspace/:workspaceId/:workspaceUserId"} element={<WorkspaceLayout />}>
           <Route
-            index
+            path='/channel/:id'
             element={
               <Suspense fallback={<></>}>
                 <ProtectRoute>
