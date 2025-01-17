@@ -368,9 +368,10 @@ export type MockMessageType = {
     img: string;
     channelid: string;
     userid: string;
+    createdAt?:string;
     user: {
       name: string;
-      username: string;
+      username?: string;
       img: string;
       id: string;
     };
@@ -379,11 +380,11 @@ export type MockMessageType = {
 export const MockMessages: MockMessageType[] = [
     {
 
-        text: "Hey guys, I have prepared all the styles and components according to our standards needed for the app development. All that remains is to add the states to the interactive elements.",
+        body: "Hey guys, I have prepared all the styles and components according to our standards needed for the app development. All that remains is to add the states to the interactive elements.",
         createdAt: "20th November 2024",
         img: "",
-        senderid: "ryrg34555dgdhfkfgogusga",
-        sender: {
+        // senderid: "ryrg34555dgdhfkfgogusga",
+        user: {
             name: "Kristin Watson",
             img: "/images/user_2.jpg",
             id: "ryrg34555dgdhfkfgogusga"
@@ -391,13 +392,13 @@ export const MockMessages: MockMessageType[] = [
     },
     {
 
-        senderid: "ryrg34555dgdhfkfgogusga",
-        sender: {
+        // senderid: "ryrg34555dgdhfkfgogusga",
+        user: {
             name: "Janel Kaurtney",
             img: "/images/user_3.jpg",
             id: "347489409dkcncbdgye74"
         },
-        text: "Hey guys dont forget our meeting! I will be waiting for you guys at coxy 11:30am. Please endeavour to be there very early!",
+        body: "Hey guys dont forget our meeting! I will be waiting for you guys at coxy 11:30am. Please endeavour to be there very early!",
         createdAt: "20th November 2024",
         img: "",
 
@@ -405,37 +406,37 @@ export const MockMessages: MockMessageType[] = [
     },
     {
 
-        text: "Absolutely consistency is key for usability. We'll ensure that the layout is uniform across..",
+        body: "Absolutely consistency is key for usability. We'll ensure that the layout is uniform across..",
         createdAt: "20th November 2024",
         img: "",
-        senderid: "ryrg34555dgdhfkfgogusga",
-        sender: {
+        // senderid: "ryrg34555dgdhfkfgogusga",
+        user: {
             name: "Kristin Watson",
             img: "/images/user_2.jpg",
             id: "ryrg34555dgdhfkfgogusga"
         }
     },
     {
-        senderid: "ryrg34555dgdhfkfgogusga",
-        sender: {
+        // senderid: "ryrg34555dgdhfkfgogusga",
+        user: {
             name: "Mike Micheal",
             img: "/images/user_1.jpg",
             id: "347489409dkcncbdgye74"
         },
-        text: "Great, thank you Kristin. i think we should foster the onboarding process to be more seamless",
+        body: "Great, thank you Kristin. i think we should foster the onboarding process to be more seamless",
         createdAt: "20th November 2024",
         img: "/images/upload_1.jpeg",
 
     },
     {
 
-        senderid: "ryrg34555dgdhfkfgogusga",
-        sender: {
+        // senderid: "ryrg34555dgdhfkfgogusga",
+        user: {
             name: "Mike Micheal",
             img: "/images/user_1.jpg",
             id: "347489409dkcncbdgye74"
         },
-        text: "This is a key issue. We will work on improving the dashboard enforcing usability across",
+        body: "This is a key issue. We will work on improving the dashboard enforcing usability across",
         createdAt: "20th November 2024",
         img: "/images/upload_3.jpeg",
 
@@ -443,13 +444,13 @@ export const MockMessages: MockMessageType[] = [
     },
     {
 
-        senderid: "ryrg34555dgdhfkfgogusga",
-        sender: {
+        // senderid: "ryrg34555dgdhfkfgogusga",
+        user: {
             name: "Mike Micheal",
             img: "/images/user_1.jpg",
             id: "347489409dkcncbdgye74"
         },
-        text: "Well, first off, I am not entirely convinced the font choice. It feels a bit casual for the srevice we are offering",
+        body: "Well, first off, I am not entirely convinced the font choice. It feels a bit casual for the srevice we are offering",
         createdAt: "20th November 2024",
         img: "/images/upload_2.jpeg",
 
@@ -457,13 +458,13 @@ export const MockMessages: MockMessageType[] = [
     },
     {
 
-        text: "I just recall the issue Amazon had in refining her Dashboard which led to a 25% decrease in interaction among her clients.. What do you think about this",
+        body: "I just recall the issue Amazon had in refining her Dashboard which led to a 25% decrease in interaction among her clients.. What do you think about this",
         createdAt: "20th November 2024",
         img: "/images/upload_4.jpeg",
 
 
-        senderid: "ryrg34555dgdhfkfgogusga",
-        sender: {
+        // senderid: "ryrg34555dgdhfkfgogusga",
+        user: {
             name: "Kristin Watson",
             img: "/images/user_2.jpg",
             id: "ryrg34555dgdhfkfgogusga"

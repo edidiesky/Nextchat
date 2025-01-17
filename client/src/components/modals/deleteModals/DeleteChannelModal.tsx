@@ -17,15 +17,14 @@ const DeleteWorkspaceModal = () => {
         dispatch(offDeleteChannelModal(""))
     }
     return (
-        <div
-            className='h-[100vh] bg-[#16161639] inset-0 backdrop-blur-sm w-full fixed top-0 left-0 z-[5000] flex items-center justify-center'>
-            <motion.div
-                variants={slide}
-                initial="initial"
-                animate={deletechannelmodal ? "enter" : "exit"}
-                exit={"exit"}
-                className="w-full min-h-full md:w-[500px] md:max-w-[600px] pt-6 md:min-h-[200px] justify-between relative items-start md:rounded-[10px] flex flex-col gap-4 bg-white">
-
+    <div className="h-[100vh] bg-[#16161639] inset-0 backdrop-blur-sm w-full fixed top-0 left-0 z-[5000] flex items-end md:items-center justify-end md:justify-center">
+         <motion.div
+           variants={slide}
+           initial="initial"
+           animate={deletechannelmodal ? "enter" : "exit"}
+           exit={"exit"}
+           className="w-full min-h-[30%] md:w-[500px] md:max-w-[550px] pt-6 md:min-h-[200px] justify-between relative items-start rounded-t-xl md:rounded-[10px] flex flex-col gap-4 bg-white"
+         >
                 <div className="w-full flex px-8 items-center justify-between gap-1">
                     <h3 className="text-2xl md:text-2xl ">
                         <span className="family2">  Delete Channel</span>

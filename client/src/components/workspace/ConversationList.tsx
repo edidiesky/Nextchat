@@ -10,7 +10,8 @@ import { FaHome } from "react-icons/fa";
 import { GoChevronDown } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { MockUserList } from "@/constants";
-// import { IoMdSettings } from "react-icons/io";
+import { onCreateChannelModal } from '@/redux/slices/modalSlice';
+
 import { BiLink, BiPlus } from "react-icons/bi";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -20,6 +21,7 @@ const ConversationList = React.memo(
   }: {
     data: { workspace: { channel: { id: number; name: string }[] } };
   }) => {
+    const dispatch = useDispatch()
     const { currentUser } = useSelector((store: { auth?: any }) => store.auth);
     // console.log("workspace", data);
     return (
@@ -74,7 +76,7 @@ const ConversationList = React.memo(
                     <span className="text-[15px] text-[#64676F]">Channels</span>
                   </div>
                   <div className="flex items-center justify-end gap-1">
-                    <span className="w-6 h-6 rounded-full hover:bg-[#ddd] cursor-pointer flex items-center justify-center">
+                    <span onClick={() => dispatch(onCreateChannelModal(""))} className="w-6 h-6 rounded-full hover:bg-[#3F4248] cursor-pointer flex items-center justify-center">
                       <BiPlus fontSize={"16px"} />
                     </span>
                   </div>
