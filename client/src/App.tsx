@@ -24,14 +24,19 @@ export default function App() {
           />
         </Route>
         {/* workspace layout */}
-        <Route path={"/workspace/:workspaceId/:workspaceUserId"} element={<WorkspaceLayout />}>
+        <Route
+          path={"/workspace/:workspaceId/:workspaceUserId"}
+          element={
+            <ProtectRoute>
+              <WorkspaceLayout />
+            </ProtectRoute>
+          }
+        >
           <Route
-            path='/channel/:id'
+            path="channel/:channelId"
             element={
               <Suspense fallback={<></>}>
-                <ProtectRoute>
-                  <Channel />
-                </ProtectRoute>
+                <Channel />
               </Suspense>
             }
           />
@@ -40,3 +45,25 @@ export default function App() {
     </div>
   );
 }
+{
+  /* <Route */
+}
+// path="/workspace/:workspaceId/:workspaceUserId"
+// element={
+//   <Suspense fallback={<div>Loading...</div>}>
+//     <ProtectRoute>
+//       <WorkspaceLayout />
+//     </ProtectRoute>
+//   </Suspense>
+// }
+// >
+// {/* Channel Page */}
+// <Route
+//   path="channel/:channelId"
+//   element={
+//     <Suspense fallback={<div>Loading Channel...</div>}>
+//       <Channel />
+//     </Suspense>
+//   }
+// />
+// </Route>

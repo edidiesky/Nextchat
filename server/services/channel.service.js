@@ -5,7 +5,7 @@ import { getASingleUserService } from "./user.service.js";
 const createChannelService = async (
   name,
   slug,
- img,
+  img,
   description,
   userid,
   workspaceid
@@ -20,7 +20,7 @@ const createChannelService = async (
   const channel = await prisma.channel.create({
     data: {
       name,
-     img,
+      img,
       description,
       slug,
       workspaceid,
@@ -40,31 +40,62 @@ const getAllUserChannelService = async (userid) => {
     where: { userid },
     include: {
       channel: {
-        select: { name: true, id: true,img: true },
+        select: { name: true, id: true, img: true },
       },
     },
   });
   return channel;
 };
 // @description  DELETE a User's channel Service
-const getSingleChannelService = async (workspaceid, id) => {
+const getSingleChannelService = async (workspaceid, id, page, limit) => {
   const channelExist = await prisma.channel.findFirst({
     where: { id, workspaceid },
     select: {
-      id:true,
+      id: true,
+      name: true,
+      description: true,
+      img: true,
+      slug: true,
       channeluser: {
         select: {
           user: {
             select: {
               name: true,
-              id:true,
+              id: true,
               username: true,
-             img: true,
+              img: true,
             },
           },
         },
       },
-      message: true
+      message: {
+        // filtering options
+        orderBy: { createdAt: "desc" },
+        skip: (page - 1) * limit,
+        take: limit,
+        select: {
+          body: true,
+          id: true,
+          img: true,
+          channelid: true,
+          userid: true,
+          parent: {
+            select: {
+              _count:{
+                select:{replies:true}
+              }
+            },
+          },
+          user: {
+            select: {
+              name: true,
+              username: true,
+              img: true,
+              id: true,
+            },
+          },
+        },
+      },
     },
   });
 

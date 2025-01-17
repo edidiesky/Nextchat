@@ -363,15 +363,17 @@ export const MockUserList: MockChatType[] = [
 
 // ------------- MOCK USER LISTS  -----------------
 export type MockMessageType = {
-    sender: {
-        img: string,
-        name: string,
-        id: string,
+    body: string;
+    id: string;
+    img: string;
+    channelid: string;
+    userid: string;
+    user: {
+      name: string;
+      username: string;
+      img: string;
+      id: string;
     };
-    senderid?: string;
-    text: string;
-    img?: string;
-    createdAt?: string;
 }
 
 export const MockMessages: MockMessageType[] = [

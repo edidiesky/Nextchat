@@ -13,6 +13,7 @@ import { MockUserList } from "@/constants";
 // import { IoMdSettings } from "react-icons/io";
 import { BiLink, BiPlus } from "react-icons/bi";
 import React from "react";
+import { Link } from "react-router-dom";
 const ConversationList = React.memo(
   ({
     data,
@@ -20,7 +21,7 @@ const ConversationList = React.memo(
     data: { workspace: { channel: { id: number; name: string }[] } };
   }) => {
     const { currentUser } = useSelector((store: { auth?: any }) => store.auth);
-    console.log("workspace", data);
+    // console.log("workspace", data);
     return (
       <div
         style={{
@@ -82,7 +83,8 @@ const ConversationList = React.memo(
               <CollapsibleContent>
                 {data?.workspace?.channel?.map((data, index: any) => {
                   return (
-                    <div
+                    <Link
+                    to={`channel/${data?.id}`}
                       key={index}
                       className="w-[90%] mx-auto flex cursor-pointer rounded-full items-center py-2 hover:bg-[#3F4248] px-3 gap-3 text-sm"
                     >
@@ -90,7 +92,7 @@ const ConversationList = React.memo(
                         <BiLink fontSize={"14px"} />
                       </div>
                       {data.name}
-                    </div>
+                    </Link>
                   );
                 })}
               </CollapsibleContent>

@@ -19,7 +19,7 @@ import {
 // @access  Private
 const createChannelHandler = asyncHandler(async (req, res) => {
   // get the body data
-  const { name, slug,img, description } = req.body;
+  const { name, slug, img, description } = req.body;
   const tokenUserID = req.user?.userId;
   const workspaceID = req.params?.workspaceid;
   // finding existing channel
@@ -32,7 +32,7 @@ const createChannelHandler = asyncHandler(async (req, res) => {
   const channel = await createChannelService(
     name,
     slug,
-   img,
+    img,
     description,
     tokenUserID,
     workspaceID
@@ -56,11 +56,17 @@ const getAllUserChannelHandler = asyncHandler(async (req, res) => {
 // @access  Private
 const getSingleChannelHandler = asyncHandler(async (req, res) => {
   const { workspaceid: workspaceid, id: channelid } = req.params;
+  const { page = 1, limit = 10 } = req.query;
   if (!workspaceid || !channelid) {
     res.status(BAD_REQUEST_STATUS_CODE);
     throw new Error("Workspace ID and WorkspaceUser ID are needed");
   }
-  let channel = await getSingleChannelService(workspaceid, channelid);
+  let channel = await getSingleChannelService(
+    workspaceid,
+    channelid,
+    page,
+    limit
+  );
   res.status(SUCCESSFULLY_CREATED_STATUS_CODE).json(channel);
 });
 
