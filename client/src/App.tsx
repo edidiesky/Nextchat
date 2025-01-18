@@ -45,25 +45,3 @@ export default function App() {
     </div>
   );
 }
-{
-  /* <Route */
-}
-// path="/workspace/:workspaceId/:workspaceUserId"
-// element={
-//   <Suspense fallback={<div>Loading...</div>}>
-//     <ProtectRoute>
-//       <WorkspaceLayout />
-//     </ProtectRoute>
-//   </Suspense>
-// }
-// >
-// {/* Channel Page */}
-// <Route
-//   path="channel/:channelId"
-//   element={
-//     <Suspense fallback={<div>Loading Channel...</div>}>
-//       <Channel />
-//     </Suspense>
-//   }
-// />
-// </Route>

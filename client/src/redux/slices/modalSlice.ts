@@ -8,7 +8,10 @@ const initialState = {
   deletemessagemodal: false,
   deletechannelmodal: false,
   deleteworkspacemodal: false,
-  channelmodal: false
+  channelmodal: false,
+  workspaceid: null,
+  workspaceUserid: null,
+  channelid: null,
 };
 
 export const modalSlice = createSlice({
@@ -36,8 +39,10 @@ export const modalSlice = createSlice({
     offGroupNameModal: (state, _action) => {
       state.groupnamemodal = false;
     },
-    onCreateChannelModal: (state, _action) => {
+    onCreateChannelModal: (state, action) => {
       state.channelmodal = true;
+      state.workspaceid = action.payload.workspaceid;
+      state.workspaceUserid = action.payload.workspaceUserid;
     },
     offCreateChannelModal: (state, _action) => {
       state.channelmodal = false;
@@ -87,7 +92,7 @@ export const {
   onDeleteChannelModal,
   offDeleteChannelModal,
   onDeleteWorkspaceModal,
-  offDeleteWorkspaceModal
+  offDeleteWorkspaceModal,
 } = modalSlice.actions;
 
 export default modalSlice.reducer;

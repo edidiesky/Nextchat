@@ -10,20 +10,24 @@ import { FaHome } from "react-icons/fa";
 import { GoChevronDown } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { MockUserList } from "@/constants";
-import { onCreateChannelModal } from '@/redux/slices/modalSlice';
+import { onCreateChannelModal } from "@/redux/slices/modalSlice";
 
 import { BiLink, BiPlus } from "react-icons/bi";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const ConversationList = React.memo(
   ({
     data,
   }: {
     data: { workspace: { channel: { id: number; name: string }[] } };
   }) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const { currentUser } = useSelector((store: { auth?: any }) => store.auth);
     // console.log("workspace", data);
+
+    const {workspaceId :workspaceid, workspaceUserId: workspaceUserid } = useParams();
+    // console.log("workspace_id", workspaceId);
+
     return (
       <div
         style={{
@@ -76,7 +80,14 @@ const ConversationList = React.memo(
                     <span className="text-[15px] text-[#64676F]">Channels</span>
                   </div>
                   <div className="flex items-center justify-end gap-1">
-                    <span onClick={() => dispatch(onCreateChannelModal(""))} className="w-6 h-6 rounded-full hover:bg-[#3F4248] cursor-pointer flex items-center justify-center">
+                    <span
+                      onClick={() =>
+                        dispatch(
+                          onCreateChannelModal({ workspaceid, workspaceUserid })
+                        )
+                      }
+                      className="w-6 h-6 rounded-full hover:bg-[#3F4248] cursor-pointer flex items-center justify-center"
+                    >
                       <BiPlus fontSize={"16px"} />
                     </span>
                   </div>
@@ -86,7 +97,7 @@ const ConversationList = React.memo(
                 {data?.workspace?.channel?.map((data, index: any) => {
                   return (
                     <Link
-                    to={`channel/${data?.id}`}
+                      to={`channel/${data?.id}`}
                       key={index}
                       className="w-[90%] mx-auto flex cursor-pointer rounded-full items-center py-2 hover:bg-[#3F4248] px-3 gap-3 text-sm"
                     >

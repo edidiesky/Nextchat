@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import { BiCamera } from "react-icons/bi";
@@ -10,6 +10,10 @@ import {
   onGroupMemberModal,
 } from "@/redux/slices/modalSlice";
 import { slide } from "@/constants/framer";
+import { useCreateChannelMutation } from "@/redux/services/channelsApi";
+import toast from "react-hot-toast";
+import { useNavigate, useParams } from "react-router-dom";
+import Loader from "@/components/loader";
 
 const formData = [
   {
@@ -19,6 +23,12 @@ const formData = [
     label: "Channel Name",
   },
   {
+    name: "slug",
+    type: "text",
+    placeholder: "Enter your Channel Slug (be brief)",
+    label: "Channel Slug",
+  },
+  {
     name: "description",
     type: "textarea",
     placeholder: "Enter your channel description",
@@ -26,31 +36,64 @@ const formData = [
   },
 ];
 const CreateChannelModal = () => {
-  const { channelmodal } = useSelector(
-    (store: { modal: { channelmodal: boolean } }) => store.modal
+  const { channelmodal, workspaceid, workspaceUserid } = useSelector(
+    (store: any) => store.modal
   );
+  const navigate = useNavigate();
   const [image, setImage] = useState("");
   const [uploading, setUploading] = useState(false);
   const [alert, setAlert] = useState(false);
   const [formValue, setFormValue] = useState({
     name: "",
+    slug: "",
     description: "",
   });
   const dispatch = useDispatch();
-  const noEntry = formValue.name === "";
+
+  const [
+    createChannel,
+    { isLoading, data: createdChannel, isSuccess: createChannelIsSuccess },
+  ] = useCreateChannelMutation();
+  const noEntry = formValue.name === "" || isLoading;
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
+  // submit the create channel form handler
   const handleFormSubmision = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    try {
+      const data = await createChannel({ workspaceid, ...formValue }).unwrap();
+      console.log("channel_data", data);
+      toast.success(`${data?.name} channel has been created succesfully!!`);
+    } catch (err: any) {
+      const errorMessages = err?.data?.error || [err.error];
+      errorMessages.forEach((message: string) => toast.error(message));
+      // toast.error(err?.data?.message || err.error);
+    }
   };
+
+  // handler for channel icon upload
 
   const handleFileUpload = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
   };
+  // handler for closing channel modal
+
   const handleOnGroupMembersModal = () => {
     dispatch(offCreateChannelModal(""));
   };
+
+  useEffect(() => {
+    if (createChannelIsSuccess && createdChannel) {
+      navigate(
+        `/workspace/${workspaceid}/${workspaceUserid}/channel/${createdChannel?.id}`
+      );
+    }
+  }, [navigate, createChannelIsSuccess, createdChannel]);
+
+  // console.log("workspaceId", workspaceid);
+  // console.log("workspaceUserid", workspaceUserid);
+  console.log("createdChannel", createdChannel);
   return (
     <div className="h-[100vh] bg-[#16161639] inset-0 backdrop-blur-sm w-full fixed top-0 left-0 z-[5000] flex items-end lg:items-center justify-end md:justify-center">
       <motion.div
@@ -132,19 +175,24 @@ const CreateChannelModal = () => {
           </div>
           <div className="w-full pb-3 px-4 pt-4 border-t text-sm flex items-center justify-end gap-3">
             <button
-              data-test="CreateChannelModal_button_1"
+              data-test="create_channel_modal_button_1"
               onClick={() => dispatch(offCreateChannelModal(""))}
               className="p-2 px-6 hover:opacity-[.5] text-[#000] hover:text-[#fff] flex items-center justify-center cursor-pointer hover:bg-[#000] rounded-full regular"
             >
               Cancel
             </button>
             <button
-              data-test="CreateChannelModal_button_2"
+              data-test="create_channel_modal_button_2"
               disabled={noEntry}
-              onClick={handleOnGroupMembersModal}
               className="p-2 px-6 hover:opacity-[.5] text-[#fff] flex items-center justify-center cursor-pointer  bg-[#3e3aff] rounded-full regular"
             >
-              Create
+              {isLoading ? (
+                <span className="flex w-full items-center justify-center gap-2">
+                  Creating <Loader type="dots" />
+                </span>
+              ) : (
+                "Create"
+              )}
             </button>
           </div>
         </form>
