@@ -63,8 +63,10 @@ const CreateChannelModal = () => {
     e.preventDefault();
     try {
       const data = await createChannel({ workspaceid, ...formValue }).unwrap();
-      console.log("channel_data", data);
+      // console.log("channel_data", data);
       toast.success(`${data?.name} channel has been created succesfully!!`);
+      const timer = setTimeout(() => dispatch(offCreateChannelModal("")), 400);
+      return () => clearTimeout(timer);
     } catch (err: any) {
       const errorMessages = err?.data?.error || [err.error];
       errorMessages.forEach((message: string) => toast.error(message));
@@ -93,7 +95,7 @@ const CreateChannelModal = () => {
 
   // console.log("workspaceId", workspaceid);
   // console.log("workspaceUserid", workspaceUserid);
-  console.log("createdChannel", createdChannel);
+  // console.log("createdChannel", createdChannel);
   return (
     <div className="h-[100vh] bg-[#16161639] inset-0 backdrop-blur-sm w-full fixed top-0 left-0 z-[5000] flex items-end lg:items-center justify-end md:justify-center">
       <motion.div
